@@ -16,6 +16,7 @@ To package the app fro windows platform:
 ## SOURCE
 
 - [Hamza Ak](https://www.linkedin.com/in/hamzaak/)
+- https://github.com/hamzaak/electron-react-webpack-boilerplate
 
 ## License
 
