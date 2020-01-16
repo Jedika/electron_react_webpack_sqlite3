@@ -1,0 +1,51 @@
+{
+  "appId": "com.hamzaak.electron-react-webpack-boilerplate",
+  "name": "electron-react-webpack-boilerplate",
+  "productName": "Electron React Webpack Boilerplate",
+  "author": "Hamza AK",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "A minimal desktop app that uses electron, react, webpack, and babel.",
+  "main": "public/electron.js",
+  "keywords": [
+    "Electron",
+    "React",
+    "Webpack",
+    "Babel"
+  ],
+  "scripts": {
+    "start": "npm-run-all --parallel start:react start:electron",
+    "start:electron": "electron .",
+    "start:react": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "bundle:react": "webpack --mode production",
+    "dist": "npm run \"bundle:react\" && node installers/windows/installer.js",
+    "postinstall": "electron-rebuild -f -w sqlite3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "electron": "^4.1.4",
+    "electron-builder": "^20.39.0",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-rebuild": "^1.8.8",
+    "npm-run-all": "^4.1.5",
+    "react-hot-loader": "^4.3.11",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.11"
+  },
+  "dependencies": {
+    "alasql": "^0.5.3",
+    "aws-sdk": "^2.604.0",
+    "electron-is-dev": "^1.1.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-native-fetch-blob": "^0.10.8",
+    "react-native-fs": "^2.16.2",
+    "sql.js": "^1.1.0",
+    "sqlite3": "^4.1.1"
+  }
+}
