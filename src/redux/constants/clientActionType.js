@@ -1,0 +1,1 @@
+export const CHANGER_NOM_CLIENT = "CHANGER_NOM_CLIENT";

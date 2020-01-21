@@ -1,15 +1,23 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const isDev = require('electron-is-dev');
-
+const windowStateKeeper = require('electron-window-state');
 let win
 
 function createWindow() {
+    let mainWindowState = windowStateKeeper({
+        defaultWidth: 800,
+        defaultHeight: 600
+      });
+    
     win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        'x': mainWindowState.x,
+        'y': mainWindowState.y,
+        'minWidth': mainWindowState.width,
+        'minHeight': mainWindowState.height,
         icon: `${__dirname}/assets/app.ico`,
         show: false
     })
+    mainWindowState.manage(win);
 
     if (isDev) {
         win.loadURL('http://localhost:8082/')
@@ -42,8 +50,7 @@ function createWindow() {
     }
 }
 
-app.on('ready', createWindow)
-
+  app.on('ready', createWindow)
 
 
 // Quit when all windows are closed.
