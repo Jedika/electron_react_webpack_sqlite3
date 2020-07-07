@@ -27,7 +27,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
-    "electron": "^4.1.4",
+    "electron": "^9.1.0",
     "electron-builder": "^20.39.0",
     "electron-devtools-installer": "^2.2.4",
     "electron-rebuild": "^1.8.8",
